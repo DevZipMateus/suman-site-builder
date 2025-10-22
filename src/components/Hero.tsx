@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Zap, Phone } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -21,7 +22,10 @@ const Hero = () => {
       id="hero"
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center pt-24 sm:pt-28 md:pt-20 pb-12 sm:pb-16 px-4 overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, hsl(200 85% 35%) 0%, hsl(200 85% 45%) 50%, hsl(45 90% 55%) 100%)",
+        backgroundImage: `linear-gradient(135deg, hsla(200, 85%, 35%, 0.92) 0%, hsla(200, 85%, 45%, 0.88) 50%, hsla(45, 90%, 55%, 0.90) 100%), url(${heroBackground})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Decorative elements */}
