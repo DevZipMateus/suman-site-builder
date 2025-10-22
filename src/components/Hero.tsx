@@ -22,7 +22,7 @@ const Hero = () => {
       id="hero"
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center pt-24 sm:pt-28 md:pt-20 pb-12 sm:pb-16 px-4 overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(135deg, hsla(200, 85%, 35%, 0.92) 0%, hsla(200, 85%, 45%, 0.88) 50%, hsla(45, 90%, 55%, 0.90) 100%), url(${heroBackground})`,
+        backgroundImage: `linear-gradient(135deg, hsla(200, 85%, 35%, 0.70) 0%, hsla(200, 85%, 45%, 0.65) 50%, hsla(45, 90%, 55%, 0.60) 100%), url(${heroBackground})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
