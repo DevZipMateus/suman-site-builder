@@ -31,21 +31,21 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-muted/30">
+    <section id="about" className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-2">
               Sobre a SUMAN ELÉTRICA
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Energia, qualidade e confiança em cada projeto
             </p>
           </div>
 
           {/* Vision and Mission */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
             <Card className="border-primary/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
@@ -80,9 +80,9 @@ const About = () => {
           </div>
 
           {/* Values */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-foreground text-center mb-8">Nossos valores</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mb-12 sm:mb-14 md:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-6 sm:mb-8 px-4">Nossos valores</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {values.map((value, index) => (
                 <Card
                   key={index}

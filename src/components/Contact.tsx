@@ -52,21 +52,21 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-background">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 bg-background">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-2">
               Entre em contato
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Estamos prontos para atender você e transformar seu projeto em realidade
             </p>
           </div>
 
           {/* Contact cards */}
-          <div className="grid sm:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10 sm:mb-12">
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
@@ -101,12 +101,12 @@ const Contact = () => {
           </div>
 
           {/* Social Media */}
-          <Card className="border-accent/20 shadow-lg mb-12">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+          <Card className="border-accent/20 shadow-lg mb-10 sm:mb-12">
+            <CardContent className="p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-5 sm:mb-6 text-center">
                 Siga-nos nas redes sociais
               </h3>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 {socialMedia.map((social, index) => (
                   <a
                     key={index}
@@ -132,25 +132,26 @@ const Contact = () => {
 
           {/* CTA Card */}
           <Card className="border-primary/20 shadow-xl bg-gradient-to-br from-primary/5 to-accent/5">
-            <CardContent className="p-8 md:p-12 text-center">
-              <h3 className="text-3xl font-bold text-foreground mb-4">
+            <CardContent className="p-6 sm:p-8 md:p-12 text-center">
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4 px-2">
                 Pronto para começar seu projeto?
               </h3>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
                 Nossa equipe de especialistas está pronta para oferecer as melhores soluções elétricas 
                 para sua residência, comércio ou indústria.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-2">
                 <a
                   href="https://wa.me/5514998017067"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
                 >
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary-light text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto bg-primary hover:bg-primary-light text-primary-foreground shadow-lg hover:shadow-xl transition-all"
                   >
-                    <Phone className="mr-2 h-5 w-5" />
+                    <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Solicite um orçamento
                   </Button>
                 </a>
@@ -158,13 +159,14 @@ const Contact = () => {
                   href="mailto:suman.eletrica@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
                 >
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-primary/60 text-primary hover:bg-primary/10 hover:border-primary shadow-md"
+                    className="w-full sm:w-auto border-primary/60 text-primary hover:bg-primary/10 hover:border-primary shadow-md"
                   >
-                    <Mail className="mr-2 h-5 w-5" />
+                    <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Enviar e-mail
                   </Button>
                 </a>

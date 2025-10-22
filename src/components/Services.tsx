@@ -60,21 +60,21 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 bg-background">
+    <section id="services" className="py-12 sm:py-16 md:py-20 px-4 bg-background">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-2">
               Nossos serviços
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Soluções completas e especializadas para garantir qualidade, segurança e eficiência em cada projeto
             </p>
           </div>
 
           {/* Services grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, index) => (
               <Card
                 key={index}
@@ -105,15 +105,15 @@ const Services = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center">
-            <p className="text-lg text-muted-foreground mb-6">
+          <div className="mt-12 sm:mt-14 md:mt-16 text-center px-4">
+            <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6">
               Precisa de um serviço específico? Entre em contato conosco!
             </p>
             <a
               href="https://wa.me/5514998017067"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 bg-primary hover:bg-primary-light text-primary-foreground rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 bg-primary hover:bg-primary-light text-primary-foreground rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
             >
               Fale com nossos especialistas
             </a>

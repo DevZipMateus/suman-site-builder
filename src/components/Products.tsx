@@ -76,21 +76,21 @@ const Products = () => {
   ];
 
   return (
-    <section id="products" className="py-20 px-4 bg-muted/30">
+    <section id="products" className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-2">
               Nossos produtos
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Ampla variedade de produtos elétricos para atender desde pequenas reformas até grandes empreendimentos
             </p>
           </div>
 
           {/* Products grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {products.map((product, index) => (
               <Card
                 key={index}
@@ -121,12 +121,12 @@ const Products = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-16 p-8 bg-card rounded-2xl shadow-xl border border-border/50">
+          <div className="mt-12 sm:mt-14 md:mt-16 p-6 sm:p-8 bg-card rounded-2xl shadow-xl border border-border/50">
             <div className="text-center max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 px-2">
                 Não encontrou o que procura?
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6 px-2">
                 Nossa equipe está pronta para ajudar você a encontrar o produto ideal para seu projeto. 
                 Entre em contato e receba atendimento personalizado.
               </p>
@@ -134,7 +134,7 @@ const Products = () => {
                 href="https://wa.me/5514998017067"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3 bg-accent hover:bg-accent-light text-accent-foreground rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 bg-accent hover:bg-accent-light text-accent-foreground rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
               >
                 Consulte nossos produtos
               </a>
