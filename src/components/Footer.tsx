@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Sobre */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-secondary">Suman Elétrica</h3>
+            <img src={logo} alt="Suman Elétrica" className="h-12 w-auto mb-2" />
             <p className="text-sm text-primary-foreground/80">
               Soluções elétricas que fazem diferença. Qualidade, confiança e excelência no atendimento.
             </p>
