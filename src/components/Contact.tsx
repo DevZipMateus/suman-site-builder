@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const Contact = () => {
   const contactInfo = [
@@ -149,9 +150,9 @@ const Contact = () => {
                 >
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-primary hover:bg-primary-light text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20BD5A] text-white shadow-lg hover:shadow-xl transition-all"
                   >
-                    <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    <img src={whatsappIcon} alt="WhatsApp" className="mr-2 h-5 w-5" />
                     Solicite um orçamento
                   </Button>
                 </a>

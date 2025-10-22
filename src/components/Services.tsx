@@ -1,5 +1,6 @@
 import { Wrench, Cpu, Lightbulb, Shield, Cable, Clipboard } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const Services = () => {
   const services = [
@@ -113,8 +114,9 @@ const Services = () => {
               href="https://wa.me/5514998017067"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 bg-primary hover:bg-primary-light text-primary-foreground rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
             >
+              <img src={whatsappIcon} alt="WhatsApp" className="mr-2 h-5 w-5" />
               Fale com nossos especialistas
             </a>
           </div>

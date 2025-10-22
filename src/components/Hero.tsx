@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Zap, Phone } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -63,7 +64,7 @@ const Hero = () => {
               size="lg"
               className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6"
             >
-              <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+              <img src={whatsappIcon} alt="WhatsApp" className="mr-2 h-5 w-5" />
               Solicite um orçamento
             </Button>
             <Button
