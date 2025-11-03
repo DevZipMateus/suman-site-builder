@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Zap, Phone } from "lucide-react";
+import { Zap, Phone, Store } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 
@@ -75,6 +76,15 @@ const Hero = () => {
             >
               Fale conosco
             </Button>
+            <Link to="/vitrine" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6"
+              >
+                <Store className="mr-2 h-5 w-5" />
+                Ver Vitrine
+              </Button>
+            </Link>
           </div>
 
           {/* Trust indicators */}
