@@ -15,6 +15,12 @@ const Vitrine = () => {
     calculateHeight();
     window.addEventListener('resize', calculateHeight);
     
+    // Oculta o badge global do index.html nesta página
+    const globalBadge = document.getElementById('montesite-footer-badge');
+    if (globalBadge && globalBadge.parentElement?.id !== 'vitrine-badge-container') {
+      globalBadge.style.display = 'none';
+    }
+    
     // Carrega o script do badge Montesite
     const script = document.createElement('script');
     script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
@@ -25,6 +31,10 @@ const Vitrine = () => {
       window.removeEventListener('resize', calculateHeight);
       if (document.body.contains(script)) {
         document.body.removeChild(script);
+      }
+      // Restaura o badge global quando sair da página
+      if (globalBadge) {
+        globalBadge.style.display = '';
       }
     };
   }, []);
@@ -47,7 +57,9 @@ const Vitrine = () => {
       </div>
       
       {/* Badge inferior - 63px */}
-      <div className="h-[63px] w-full" id="montesite-footer-badge"></div>
+      <div id="vitrine-badge-container" className="h-[63px] w-full">
+        <div id="montesite-footer-badge"></div>
+      </div>
     </div>
   );
 };
