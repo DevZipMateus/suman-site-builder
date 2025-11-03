@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isVitrineRoute = location.pathname === '/vitrine';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +38,7 @@ const Header = () => {
     { label: "Sobre", id: "about" },
     { label: "Serviços", id: "services" },
     { label: "Produtos", id: "products" },
+    { label: "Vitrine", id: "vitrine", isRoute: true },
     { label: "Contato", id: "contact" },
   ];
 
@@ -49,31 +53,44 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="SUMAN ELÉTRICA" className="h-12 w-auto" />
             <span className="text-xl font-bold text-foreground hidden sm:block">
               SUMAN ELÉTRICA
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Button>
+              item.isRoute ? (
+                <Link key={item.id} to={`/${item.id}`}>
+                  <Button
+                    variant="ghost"
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              ) : (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Button>
+              )
             ))}
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="ml-4 bg-primary hover:bg-primary-light text-primary-foreground"
-            >
-              Entre em contato
-            </Button>
+            {!isVitrineRoute && (
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="ml-4 bg-primary hover:bg-primary-light text-primary-foreground"
+              >
+                Entre em contato
+              </Button>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -91,21 +108,35 @@ const Header = () => {
           <nav className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-2">
               {menuItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
-                  className="justify-start text-foreground hover:text-primary"
-                >
-                  {item.label}
-                </Button>
+                item.isRoute ? (
+                  <Link key={item.id} to={`/${item.id}`}>
+                    <Button
+                      variant="ghost"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="justify-start text-foreground hover:text-primary w-full"
+                    >
+                      {item.label}
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    onClick={() => scrollToSection(item.id)}
+                    className="justify-start text-foreground hover:text-primary"
+                  >
+                    {item.label}
+                  </Button>
+                )
               ))}
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary-light text-primary-foreground"
-              >
-                Entre em contato
-              </Button>
+              {!isVitrineRoute && (
+                <Button
+                  onClick={() => scrollToSection("contact")}
+                  className="bg-primary hover:bg-primary-light text-primary-foreground"
+                >
+                  Entre em contato
+                </Button>
+              )}
             </div>
           </nav>
         )}
