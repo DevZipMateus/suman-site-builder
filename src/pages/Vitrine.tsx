@@ -30,7 +30,7 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full overflow-hidden flex flex-col">
+    <div className="h-screen w-full overflow-hidden flex flex-col fixed inset-0">
       {/* Header fixo - 80px */}
       <div className="h-20 w-full">
         <Header />
