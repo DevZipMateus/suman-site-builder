@@ -15,7 +15,18 @@ const Vitrine = () => {
     calculateHeight();
     window.addEventListener('resize', calculateHeight);
     
-    return () => window.removeEventListener('resize', calculateHeight);
+    // Carrega o script do badge Montesite
+    const script = document.createElement('script');
+    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      window.removeEventListener('resize', calculateHeight);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
   }, []);
 
   return (
@@ -36,17 +47,7 @@ const Vitrine = () => {
       </div>
       
       {/* Badge inferior - 63px */}
-      <div className="h-[63px] w-full bg-muted/30 border-t border-border flex items-center justify-center">
-        <a 
-          href="https://montesite.com.br" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
-        >
-          <span>Desenvolvido por</span>
-          <span className="font-semibold">Montesite</span>
-        </a>
-      </div>
+      <div className="h-[63px] w-full" id="montesite-footer-badge"></div>
     </div>
   );
 };
