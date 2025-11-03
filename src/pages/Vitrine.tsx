@@ -2,42 +2,40 @@ import { useEffect, useState } from 'react';
 import Header from "@/components/Header";
 
 const Vitrine = () => {
-  const [iframeHeight, setIframeHeight] = useState('calc(100vh - 80px)');
+  const [iframeHeight, setIframeHeight] = useState('calc(100vh - 143px)');
 
   useEffect(() => {
     const calculateHeight = () => {
       const headerHeight = 80; // 80px
-      const calculatedHeight = window.innerHeight - headerHeight;
+      const badgeHeight = 63; // 63px
+      const calculatedHeight = window.innerHeight - headerHeight - badgeHeight;
       setIframeHeight(`${calculatedHeight}px`);
     };
 
     calculateHeight();
     window.addEventListener('resize', calculateHeight);
     
-    // Oculta todos os badges do Montesite nesta página
-    const hideAllBadges = () => {
-      const badges = document.querySelectorAll('#montesite-footer-badge, [id*="montesite"]');
-      badges.forEach(badge => {
-        if (badge instanceof HTMLElement) {
-          badge.style.display = 'none';
-        }
-      });
-    };
+    // Oculta o badge global do index.html nesta página
+    const globalBadge = document.getElementById('montesite-footer-badge');
+    if (globalBadge && globalBadge.parentElement?.id !== 'vitrine-badge-container') {
+      globalBadge.style.display = 'none';
+    }
     
-    hideAllBadges();
-    // Verifica novamente após um pequeno delay para pegar badges carregados dinamicamente
-    const timeout = setTimeout(hideAllBadges, 100);
+    // Carrega o script do badge Montesite
+    const script = document.createElement('script');
+    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+    script.async = true;
+    document.body.appendChild(script);
     
     return () => {
       window.removeEventListener('resize', calculateHeight);
-      clearTimeout(timeout);
-      // Restaura os badges quando sair da página
-      const badges = document.querySelectorAll('#montesite-footer-badge, [id*="montesite"]');
-      badges.forEach(badge => {
-        if (badge instanceof HTMLElement) {
-          badge.style.display = '';
-        }
-      });
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+      // Restaura o badge global quando sair da página
+      if (globalBadge) {
+        globalBadge.style.display = '';
+      }
     };
   }, []);
 
@@ -56,6 +54,11 @@ const Vitrine = () => {
           style={{ border: 'none' }}
           title="Demonstração de Vitrine"
         />
+      </div>
+      
+      {/* Badge inferior - 63px */}
+      <div id="vitrine-badge-container" className="h-[63px] w-full">
+        <div id="montesite-footer-badge"></div>
       </div>
     </div>
   );
